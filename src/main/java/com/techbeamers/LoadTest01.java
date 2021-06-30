@@ -20,9 +20,6 @@ public class LoadTest01 {
 	public String baseUrl = "https://www.xboxgamertag.com/";
 	String driverPath = "geckodriver.exe";
 	public WebDriver driver;
-	public String expected = null;
-	public String actual = null;
-	CustomAssertion m_custom = new CustomAssertion();
 	public String userNameFor6 = "";
 	
 	@BeforeTest
