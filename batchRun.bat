@@ -1,0 +1,1 @@
+java org.testng.TestNG %WORKSPACE%\testng.xml

@@ -3,6 +3,7 @@ package com.techbeamers;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -21,12 +22,13 @@ public class LoadTest01 {
 	String driverPath = "geckodriver.exe";
 	public WebDriver driver;
 	public String userNameFor6 = "";
-	
+	//added Batch file, committing to master to incorporate in next jenkins build
 	@BeforeTest
 	public void launchBrowser() throws FileNotFoundException {
 		System.out.println("launching firefox browser");
 		System.setProperty("webdriver.gecko.driver", driverPath);
 		driver = new FirefoxDriver();
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		driver.get(baseUrl);
 		
 		Homepage hp = PageFactory.initElements(driver, Homepage.class);
